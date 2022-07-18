@@ -63,4 +63,55 @@ RSpec.describe 'Registration Page', type: :feature do
       expect(page).to have_content('A required field was missing or email is already in use')
     end
   end
+
+  describe 'Authentication sad path returns an error when' do
+    it 'required fields are missing' do
+      visit '/register'
+
+      fill_in(:name, with: 'Christopher Lee')
+      fill_in(:email, with: '')
+      fill_in(:password, with: 'test123')
+      fill_in(:password_confirmation, with: 'test123')
+      click_button('Create New User')
+
+      shouldnt_exist = User.where(name: 'Christopher Lee')
+
+      expect(shouldnt_exist).to eq([])
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Email can't be blank")
+    end
+
+    it 'email is taken' do
+      User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      visit '/register'
+
+      fill_in(:name, with: 'Peter Cushing')
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      fill_in(:password_confirmation, with: 'test123')
+      click_button('Create New User')
+
+      shouldnt_exist = User.where(name: 'Peter Cushing')
+
+      expect(shouldnt_exist).to eq([])
+      expect(current_path).to eq('/register')
+      expect(page).to have_content('Email has already been taken')
+    end
+
+    it 'passwords do not match' do
+      visit '/register'
+
+      fill_in(:name, with: 'Christopher Lee')
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      fill_in(:password_confirmation, with: 'test321')
+      click_button('Create New User')
+
+      shouldnt_exist = User.where(name: 'Christopher Lee')
+
+      expect(shouldnt_exist).to eq([])
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+  end
 end
