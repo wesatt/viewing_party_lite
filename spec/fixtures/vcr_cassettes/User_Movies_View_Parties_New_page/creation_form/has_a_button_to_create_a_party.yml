@@ -18,64 +18,52 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 21:21:51 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Mon, 18 Jul 2022 19:23:52 GMT
       Server:
-      - BunnyCDN-SIL-915
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"7a3c99d645a2fc8f795591a737598356"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 94965285d6c51b6832c193636fa8568d33bd0051
       X-Memc-Age:
-      - '5923'
+      - '9621'
       X-Memc-Expires:
-      - '10373'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 21:21:51
-      Cdn-Edgestorageid:
-      - '915'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 6f584cbe47aa3bd3b1feaa8030159eff
-      Cdn-Cache:
-      - HIT
+      - '5252'
+      Etag:
+      - W/"274bdb3c71571524e040024b48a2ab8e"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 60a739d966f0e7be8035a21cab92a320.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      X-Amz-Cf-Id:
+      - IMoIv6vt3MaksJngbcwH8XicJOju4J3BEJAZSAPw2uUVDq9sr5cJdg==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMS40NDYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM2fQ==
-  recorded_at: Sun, 10 Jul 2022 21:21:51 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMC4xNTYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM4fQ==
+  recorded_at: Mon, 18 Jul 2022 19:23:53 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11868?api_key=<api_key>
@@ -94,62 +82,50 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 21:21:51 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Mon, 18 Jul 2022 19:23:52 GMT
       Server:
-      - BunnyCDN-SIL-915
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"7a3c99d645a2fc8f795591a737598356"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 94965285d6c51b6832c193636fa8568d33bd0051
       X-Memc-Age:
-      - '5923'
+      - '9621'
       X-Memc-Expires:
-      - '10373'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 21:21:51
-      Cdn-Edgestorageid:
-      - '915'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - a89ba176d39de9426894920a8f4db20c
-      Cdn-Cache:
-      - HIT
+      - '5252'
+      Etag:
+      - W/"274bdb3c71571524e040024b48a2ab8e"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3364d01d27e5eefe2ce5d7ce499e55b2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      X-Amz-Cf-Id:
+      - XFBNqcqQgI8fxFqZ8anL-BzPINWqdQRf70xXexxOC31z57ValU1-Wg==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMS40NDYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM2fQ==
-  recorded_at: Sun, 10 Jul 2022 21:21:51 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMC4xNTYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM4fQ==
+  recorded_at: Mon, 18 Jul 2022 19:23:53 GMT
 recorded_with: VCR 6.1.0

@@ -18,90 +18,76 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 21:21:53 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Mon, 18 Jul 2022 19:23:55 GMT
       Server:
-      - BunnyCDN-SIL-915
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Last-Modified:
-      - Wed, 24 Nov 2021 15:42:50 GMT
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - 58459869b5f260c52ae59d366fb37d8adb1f4e49
       X-Memc-Age:
-      - '0'
+      - '1192'
       X-Memc-Expires:
-      - '17531'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 21:21:53
-      Cdn-Edgestorageid:
-      - '915'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 53e430e07f0bcfb9cd15fe05dba38979
-      Cdn-Cache:
-      - MISS
+      - '16632'
+      Etag:
+      - W/"410d0b98898d327cb4d20b1544baeac1"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5bd918b219147fe5383554f645d96f74.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      X-Amz-Cf-Id:
+      - jgf3cirghpbr64IB4nvbU6gQRR3jnhDc4V4vpuc7Dz-7-HTzxskh_w==
     body:
       encoding: ASCII-8BIT
       string: '{"id":11868,"cast":[{"adult":false,"gender":2,"id":5,"known_for_department":"Acting","name":"Peter
-        Cushing","original_name":"Peter Cushing","popularity":12.407,"profile_path":"/if5g03wn6uvHx7F6FxXHLebKc0q.jpg","cast_id":1,"character":"Doctor
+        Cushing","original_name":"Peter Cushing","popularity":14.518,"profile_path":"/if5g03wn6uvHx7F6FxXHLebKc0q.jpg","cast_id":1,"character":"Doctor
         Van Helsing","credit_id":"52fe44969251416c7503a173","order":0},{"adult":false,"gender":2,"id":113,"known_for_department":"Acting","name":"Christopher
-        Lee","original_name":"Christopher Lee","popularity":9.782,"profile_path":"/dA26fBr3t7mKqjn3OYW6kbD1LXM.jpg","cast_id":2,"character":"Count
+        Lee","original_name":"Christopher Lee","popularity":15.242,"profile_path":"/dA26fBr3t7mKqjn3OYW6kbD1LXM.jpg","cast_id":2,"character":"Count
         Dracula","credit_id":"52fe44969251416c7503a177","order":1},{"adult":false,"gender":2,"id":3796,"known_for_department":"Acting","name":"Michael
-        Gough","original_name":"Michael Gough","popularity":6.978,"profile_path":"/owcwnV6dymBd9YIQKDPzVA5EtZX.jpg","cast_id":3,"character":"Arthur
+        Gough","original_name":"Michael Gough","popularity":5.499,"profile_path":"/owcwnV6dymBd9YIQKDPzVA5EtZX.jpg","cast_id":3,"character":"Arthur
         Holmwood","credit_id":"52fe44969251416c7503a17b","order":2},{"adult":false,"gender":1,"id":70794,"known_for_department":"Acting","name":"Melissa
-        Stribling","original_name":"Melissa Stribling","popularity":1.199,"profile_path":"/ust0gMTkH1GN70FKy5UHwUom7BL.jpg","cast_id":4,"character":"Mina
+        Stribling","original_name":"Melissa Stribling","popularity":1.038,"profile_path":"/ust0gMTkH1GN70FKy5UHwUom7BL.jpg","cast_id":4,"character":"Mina
         Holmwood","credit_id":"52fe44969251416c7503a17f","order":3},{"adult":false,"gender":1,"id":122951,"known_for_department":"Acting","name":"Carol
-        Marsh","original_name":"Carol Marsh","popularity":3.068,"profile_path":"/bYxlw22AOyIWrroW6fagAEYWQqJ.jpg","cast_id":14,"character":"Lucy
+        Marsh","original_name":"Carol Marsh","popularity":0.76,"profile_path":"/bYxlw22AOyIWrroW6fagAEYWQqJ.jpg","cast_id":14,"character":"Lucy
         Holmwood","credit_id":"52fe44979251416c7503a1b9","order":4},{"adult":false,"gender":1,"id":987684,"known_for_department":"Acting","name":"Olga
-        Dickie","original_name":"Olga Dickie","popularity":3.314,"profile_path":"/yI1BwPWwJMSuP6cm3Tiwua4y8We.jpg","cast_id":15,"character":"Gerda","credit_id":"52fe44979251416c7503a1bd","order":5},{"adult":false,"gender":2,"id":106989,"known_for_department":"Acting","name":"John
-        Van Eyssen","original_name":"John Van Eyssen","popularity":2.262,"profile_path":"/9L2tAdc2rjBCoLMNHQfiMiFzQvH.jpg","cast_id":16,"character":"Jonathan
+        Dickie","original_name":"Olga Dickie","popularity":3.986,"profile_path":"/yI1BwPWwJMSuP6cm3Tiwua4y8We.jpg","cast_id":15,"character":"Gerda","credit_id":"52fe44979251416c7503a1bd","order":5},{"adult":false,"gender":2,"id":106989,"known_for_department":"Acting","name":"John
+        Van Eyssen","original_name":"John Van Eyssen","popularity":1.505,"profile_path":"/9L2tAdc2rjBCoLMNHQfiMiFzQvH.jpg","cast_id":16,"character":"Jonathan
         Harker","credit_id":"52fe44979251416c7503a1c1","order":6},{"adult":false,"gender":1,"id":30189,"known_for_department":"Acting","name":"Valerie
-        Gaunt","original_name":"Valerie Gaunt","popularity":2.827,"profile_path":"/Al3hj2K0FaT7tiwPb8aQIEBRTE0.jpg","cast_id":17,"character":"Vampire
+        Gaunt","original_name":"Valerie Gaunt","popularity":2.798,"profile_path":"/Al3hj2K0FaT7tiwPb8aQIEBRTE0.jpg","cast_id":17,"character":"Vampire
         Woman","credit_id":"52fe44979251416c7503a1c5","order":7},{"adult":false,"gender":1,"id":588902,"known_for_department":"Acting","name":"Janina
-        Faye","original_name":"Janina Faye","popularity":4.368,"profile_path":"/mvbT1ZgNhzAoFfd39NYHmK5AB8N.jpg","cast_id":18,"character":"Tania","credit_id":"52fe44979251416c7503a1c9","order":8},{"adult":false,"gender":1,"id":78946,"known_for_department":"Acting","name":"Barbara
-        Archer","original_name":"Barbara Archer","popularity":1.646,"profile_path":null,"cast_id":19,"character":"Inga","credit_id":"52fe44979251416c7503a1cd","order":9},{"adult":false,"gender":2,"id":93172,"known_for_department":"Acting","name":"Charles
-        Lloyd Pack","original_name":"Charles Lloyd Pack","popularity":2.724,"profile_path":"/xQtkquFUMBH9ISIjTAeZT719MmJ.jpg","cast_id":20,"character":"Doctor
+        Faye","original_name":"Janina Faye","popularity":2.895,"profile_path":"/mvbT1ZgNhzAoFfd39NYHmK5AB8N.jpg","cast_id":18,"character":"Tania","credit_id":"52fe44979251416c7503a1c9","order":8},{"adult":false,"gender":1,"id":78946,"known_for_department":"Acting","name":"Barbara
+        Archer","original_name":"Barbara Archer","popularity":1.033,"profile_path":null,"cast_id":19,"character":"Inga","credit_id":"52fe44979251416c7503a1cd","order":9},{"adult":false,"gender":2,"id":93172,"known_for_department":"Acting","name":"Charles
+        Lloyd Pack","original_name":"Charles Lloyd Pack","popularity":3.43,"profile_path":"/xQtkquFUMBH9ISIjTAeZT719MmJ.jpg","cast_id":20,"character":"Doctor
         Seward","credit_id":"52fe44979251416c7503a1d1","order":10},{"adult":false,"gender":2,"id":27944,"known_for_department":"Acting","name":"George
-        Merritt","original_name":"George Merritt","popularity":1.851,"profile_path":"/5Q3zRQOzfgeiu7CIo0jYjHvvbnE.jpg","cast_id":21,"character":"Policeman
+        Merritt","original_name":"George Merritt","popularity":1.05,"profile_path":"/5Q3zRQOzfgeiu7CIo0jYjHvvbnE.jpg","cast_id":21,"character":"Policeman
         (uncredited)","credit_id":"52fe44979251416c7503a1d5","order":11},{"adult":false,"gender":2,"id":104305,"known_for_department":"Acting","name":"George
-        Woodbridge","original_name":"George Woodbridge","popularity":2.235,"profile_path":"/tB2HJET65fJ3OQSrQZae66UkojI.jpg","cast_id":22,"character":"Landlord
+        Woodbridge","original_name":"George Woodbridge","popularity":1.978,"profile_path":"/tB2HJET65fJ3OQSrQZae66UkojI.jpg","cast_id":22,"character":"Landlord
         (uncredited)","credit_id":"52fe44979251416c7503a1d9","order":12},{"adult":false,"gender":2,"id":115604,"known_for_department":"Acting","name":"George
-        Benson","original_name":"George Benson","popularity":1.827,"profile_path":"/vYVYyfSudETvcMXm7oj1DXNHXDZ.jpg","cast_id":23,"character":"Official
+        Benson","original_name":"George Benson","popularity":1.099,"profile_path":"/vYVYyfSudETvcMXm7oj1DXNHXDZ.jpg","cast_id":23,"character":"Official
         (uncredited)","credit_id":"59901204c3a36874c4028a62","order":13},{"adult":false,"gender":2,"id":47395,"known_for_department":"Acting","name":"Miles
-        Malleson","original_name":"Miles Malleson","popularity":4.796,"profile_path":"/a5GAmDgilMZRBbNPyTbD9gHVZFG.jpg","cast_id":24,"character":"Marx
+        Malleson","original_name":"Miles Malleson","popularity":9.663,"profile_path":"/a5GAmDgilMZRBbNPyTbD9gHVZFG.jpg","cast_id":24,"character":"Marx
         - Undertaker (uncredited)","credit_id":"59901210c3a3687481026bb3","order":14},{"adult":false,"gender":2,"id":123209,"known_for_department":"Acting","name":"Geoffrey
-        Bayldon","original_name":"Geoffrey Bayldon","popularity":3.703,"profile_path":"/l2l3JMl3EzIG2IZZfnqiSabsuIv.jpg","cast_id":25,"character":"Porter
+        Bayldon","original_name":"Geoffrey Bayldon","popularity":2.077,"profile_path":"/l2l3JMl3EzIG2IZZfnqiSabsuIv.jpg","cast_id":25,"character":"Porter
         (uncredited)","credit_id":"5990121ac3a3687481026bbe","order":15},{"adult":false,"gender":0,"id":1868764,"known_for_department":"Acting","name":"Paul
         Cole","original_name":"Paul Cole","popularity":0.6,"profile_path":null,"cast_id":26,"character":"Lad
         (uncredited)","credit_id":"599012289251416723027fd8","order":16},{"adult":false,"gender":0,"id":1868765,"known_for_department":"Acting","name":"Stedwell
@@ -109,41 +95,41 @@ http_interactions:
         Passenger (uncredited)","credit_id":"59901236c3a36874b4026248","order":17},{"adult":false,"gender":0,"id":1078781,"known_for_department":"Acting","name":"Humphrey
         Kent","original_name":"Humphrey Kent","popularity":0.6,"profile_path":null,"cast_id":28,"character":"Fat
         Merchant (uncredited)","credit_id":"59901244925141673e028f6d","order":18},{"adult":false,"gender":2,"id":1481298,"known_for_department":"Acting","name":"John
-        Maxim","original_name":"John Maxim","popularity":0.84,"profile_path":"/1CbT4CPWkLQCtwstHtjMtTnWmF2.jpg","cast_id":29,"character":"Inn
+        Maxim","original_name":"John Maxim","popularity":1.4,"profile_path":"/1CbT4CPWkLQCtwstHtjMtTnWmF2.jpg","cast_id":29,"character":"Inn
         Customer (uncredited)","credit_id":"59901250925141675902733f","order":19},{"adult":false,"gender":0,"id":1868766,"known_for_department":"Acting","name":"Guy
         Mills","original_name":"Guy Mills","popularity":0.6,"profile_path":null,"cast_id":30,"character":"Coach
         Driver (uncredited)","credit_id":"5990125d925141670b028838","order":20},{"adult":false,"gender":2,"id":137351,"known_for_department":"Acting","name":"Richard
-        Morgan","original_name":"Richard Morgan","popularity":1.435,"profile_path":null,"cast_id":31,"character":"Coach
+        Morgan","original_name":"Richard Morgan","popularity":1.4,"profile_path":null,"cast_id":31,"character":"Coach
         Driver''s Companion (uncredited)","credit_id":"5990126a9251416759027362","order":21},{"adult":false,"gender":0,"id":2458475,"known_for_department":"Acting","name":"John
         Mossman","original_name":"John Mossman","popularity":0.6,"profile_path":null,"cast_id":42,"character":"Hearse
         Driver (uncredited)","credit_id":"5dce6061cc277c0012e4cc5c","order":22},{"adult":false,"gender":0,"id":1647544,"known_for_department":"Acting","name":"Judith
-        Nelmes","original_name":"Judith Nelmes","popularity":0.6,"profile_path":null,"cast_id":33,"character":"Coach
+        Nelmes","original_name":"Judith Nelmes","popularity":1.096,"profile_path":null,"cast_id":33,"character":"Coach
         Passenger (uncredited)","credit_id":"59901282c3a368744202747c","order":23},{"adult":false,"gender":2,"id":1157646,"known_for_department":"Acting","name":"William
-        Sherwood","original_name":"William Sherwood","popularity":0.6,"profile_path":null,"cast_id":34,"character":"Priest
+        Sherwood","original_name":"William Sherwood","popularity":0.768,"profile_path":null,"cast_id":34,"character":"Priest
         (uncredited)","credit_id":"5990128d9251416739026e4b","order":24}],"crew":[{"adult":false,"gender":2,"id":1544,"known_for_department":"Writing","name":"Bram
-        Stoker","original_name":"Bram Stoker","popularity":2.198,"profile_path":"/qJR6jc8hSFZyyZbthfZPi2QU40U.jpg","credit_id":"52fe44969251416c7503a18b","department":"Writing","job":"Novel"},{"adult":false,"gender":0,"id":18758,"known_for_department":"Crew","name":"Les
-        Bowie","original_name":"Les Bowie","popularity":1.96,"profile_path":null,"credit_id":"599012e1c3a3687481026c9e","department":"Crew","job":"Special
+        Stoker","original_name":"Bram Stoker","popularity":4.495,"profile_path":"/qJR6jc8hSFZyyZbthfZPi2QU40U.jpg","credit_id":"52fe44969251416c7503a18b","department":"Writing","job":"Novel"},{"adult":false,"gender":0,"id":18758,"known_for_department":"Crew","name":"Les
+        Bowie","original_name":"Les Bowie","popularity":1.01,"profile_path":null,"credit_id":"599012e1c3a3687481026c9e","department":"Crew","job":"Special
         Effects"},{"adult":false,"gender":2,"id":29662,"known_for_department":"Directing","name":"Terence
-        Fisher","original_name":"Terence Fisher","popularity":2.203,"profile_path":"/1yO4YiJvmvVsF8T4fSmSoBSuzFg.jpg","credit_id":"52fe44969251416c7503a185","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":29664,"known_for_department":"Production","name":"Michael
-        Carreras","original_name":"Michael Carreras","popularity":1.934,"profile_path":"/e0MawnOmsD0PcYeceopaxklz7yK.jpg","credit_id":"52fe44969251416c7503a197","department":"Production","job":"Executive
+        Fisher","original_name":"Terence Fisher","popularity":2.136,"profile_path":"/1yO4YiJvmvVsF8T4fSmSoBSuzFg.jpg","credit_id":"52fe44969251416c7503a185","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":29664,"known_for_department":"Production","name":"Michael
+        Carreras","original_name":"Michael Carreras","popularity":0.608,"profile_path":"/e0MawnOmsD0PcYeceopaxklz7yK.jpg","credit_id":"52fe44969251416c7503a197","department":"Production","job":"Executive
         Producer"},{"adult":false,"gender":2,"id":29665,"known_for_department":"Production","name":"Anthony
-        Nelson Keys","original_name":"Anthony Nelson Keys","popularity":1.96,"profile_path":null,"credit_id":"599012b0c3a36874420274c2","department":"Production","job":"Associate
+        Nelson Keys","original_name":"Anthony Nelson Keys","popularity":0.6,"profile_path":null,"credit_id":"599012b0c3a36874420274c2","department":"Production","job":"Associate
         Producer"},{"adult":false,"gender":2,"id":29667,"known_for_department":"Camera","name":"Jack
-        Asher","original_name":"Jack Asher","popularity":0.716,"profile_path":null,"credit_id":"52fe44979251416c7503a1a9","department":"Camera","job":"Director
+        Asher","original_name":"Jack Asher","popularity":1.38,"profile_path":null,"credit_id":"52fe44979251416c7503a1a9","department":"Camera","job":"Director
         of Photography"},{"adult":false,"gender":0,"id":30137,"known_for_department":"Sound","name":"James
-        Bernard","original_name":"James Bernard","popularity":1.708,"profile_path":null,"credit_id":"52fe44969251416c7503a1a3","department":"Sound","job":"Original
+        Bernard","original_name":"James Bernard","popularity":0.828,"profile_path":null,"credit_id":"52fe44969251416c7503a1a3","department":"Sound","job":"Original
         Music Composer"},{"adult":false,"gender":2,"id":30139,"known_for_department":"Art","name":"Bernard
         Robinson","original_name":"Bernard Robinson","popularity":0.6,"profile_path":null,"credit_id":"599012bbc3a36874a3027da3","department":"Art","job":"Production
         Design"},{"adult":false,"gender":2,"id":30139,"known_for_department":"Art","name":"Bernard
         Robinson","original_name":"Bernard Robinson","popularity":0.6,"profile_path":null,"credit_id":"599012c6c3a3687461026144","department":"Art","job":"Art
         Direction"},{"adult":false,"gender":2,"id":30168,"known_for_department":"Production","name":"Anthony
-        Hinds","original_name":"Anthony Hinds","popularity":2.814,"profile_path":null,"credit_id":"52fe44969251416c7503a19d","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":30172,"known_for_department":"Editing","name":"James
+        Hinds","original_name":"Anthony Hinds","popularity":1.694,"profile_path":null,"credit_id":"52fe44969251416c7503a19d","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":30172,"known_for_department":"Editing","name":"James
         Needs","original_name":"James Needs","popularity":0.6,"profile_path":null,"credit_id":"52fe44979251416c7503a1b5","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":30700,"known_for_department":"Writing","name":"Jimmy
-        Sangster","original_name":"Jimmy Sangster","popularity":0.919,"profile_path":"/oDLQFovGVoTMyVjjTDKOAdvJYFr.jpg","credit_id":"52fe44969251416c7503a191","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":40355,"known_for_department":"Editing","name":"Bill
-        Lenny","original_name":"Bill Lenny","popularity":1.38,"profile_path":null,"credit_id":"52fe44979251416c7503a1af","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":53587,"known_for_department":"Acting","name":"Peter
-        Diamond","original_name":"Peter Diamond","popularity":2.811,"profile_path":"/nVb4nFvWloTdzopD42aNV5osYKU.jpg","credit_id":"599012f1c3a3687481026cb8","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":188516,"known_for_department":"Acting","name":"Nosher
-        Powell","original_name":"Nosher Powell","popularity":0.759,"profile_path":"/w1h7eeWxDb8NdAYOy3NqYWwD3un.jpg","credit_id":"599012fb9251416759027408","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":1340059,"known_for_department":"Crew","name":"Sydney
+        Sangster","original_name":"Jimmy Sangster","popularity":0.98,"profile_path":"/oDLQFovGVoTMyVjjTDKOAdvJYFr.jpg","credit_id":"52fe44969251416c7503a191","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":40355,"known_for_department":"Editing","name":"Bill
+        Lenny","original_name":"Bill Lenny","popularity":0.6,"profile_path":null,"credit_id":"52fe44979251416c7503a1af","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":53587,"known_for_department":"Acting","name":"Peter
+        Diamond","original_name":"Peter Diamond","popularity":0.716,"profile_path":"/nVb4nFvWloTdzopD42aNV5osYKU.jpg","credit_id":"599012f1c3a3687481026cb8","department":"Crew","job":"Stunts"},{"adult":false,"gender":2,"id":188516,"known_for_department":"Acting","name":"Nosher
+        Powell","original_name":"Nosher Powell","popularity":1.92,"profile_path":"/w1h7eeWxDb8NdAYOy3NqYWwD3un.jpg","credit_id":"599012fb9251416759027408","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":1340059,"known_for_department":"Crew","name":"Sydney
         Pearson","original_name":"Sydney Pearson","popularity":0.6,"profile_path":null,"credit_id":"599012d6c3a3687473027cbf","department":"Crew","job":"Special
         Effects"}]}'
-  recorded_at: Sun, 10 Jul 2022 21:21:53 GMT
+  recorded_at: Mon, 18 Jul 2022 19:23:55 GMT
 recorded_with: VCR 6.1.0
