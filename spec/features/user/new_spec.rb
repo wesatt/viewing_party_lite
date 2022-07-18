@@ -26,41 +26,43 @@ RSpec.describe 'Registration Page', type: :feature do
     it 'will return an error if name is missing' do
       visit '/register'
 
-      expect(page).to_not have_content('A required field was missing or email is already in use')
+      expect(page).to_not have_content("Name can't be blank")
 
       # fill_in(:name, with: "")
       fill_in(:email, with: 'not-frankenstein@gmail.com')
       click_button('Create New User')
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('A required field was missing or email is already in use')
+      expect(page).to have_content("Name can't be blank")
     end
 
     it 'will return an error if email is missing' do
       visit '/register'
 
-      expect(page).to_not have_content('A required field was missing or email is already in use')
+      expect(page).to_not have_content("Email can't be blank")
 
       fill_in(:name, with: "Frankenstein's Monster")
       # fill_in(:email, with: "")
       click_button('Create New User')
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('A required field was missing or email is already in use')
+      expect(page).to have_content("Email can't be blank")
     end
 
     it 'will return an error if email is not unique' do
-      User.create(name: 'Adam Frankenstein', email: 'not-frankenstein@gmail.com')
+      User.create!(name: 'Adam Frankenstein', email: 'not-frankenstein@gmail.com', password: 'Test123', password_confirmation: 'Test123')
       visit '/register'
 
-      expect(page).to_not have_content('A required field was missing or email is already in use')
+      expect(page).to_not have_content("Name can't be blank")
 
       fill_in(:name, with: "Frankenstein's Monster")
       fill_in(:email, with: 'not-frankenstein@gmail.com')
+      fill_in(:password, with: 'test123')
+      fill_in(:password_confirmation, with: 'test123')
       click_button('Create New User')
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('A required field was missing or email is already in use')
+      expect(page).to have_content("Email has already been taken")
     end
   end
 
@@ -112,6 +114,22 @@ RSpec.describe 'Registration Page', type: :feature do
       expect(shouldnt_exist).to eq([])
       expect(current_path).to eq('/register')
       expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
+    it 'either password or password_confirmation is missing' do
+      visit '/register'
+
+      fill_in(:name, with: 'Christopher Lee')
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: '')
+      fill_in(:password_confirmation, with: 'test321')
+      click_button('Create New User')
+
+      shouldnt_exist = User.where(name: 'Christopher Lee')
+
+      expect(shouldnt_exist).to eq([])
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Password digest can't be blank")
     end
   end
 end
