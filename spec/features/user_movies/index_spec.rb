@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'The User Movies Index page' do
   describe 'top rated movies' do
     it 'has a list of top rated movies', :vcr do
-      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com')
+      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
       visit "/users/#{oakley.id}/discover"
 
@@ -21,7 +21,7 @@ RSpec.describe 'The User Movies Index page' do
 
   describe 'movies search feature' do
     it 'can search for movies based on search criteria', :vcr do
-      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com')
+      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
       visit "/users/#{oakley.id}/discover"
 
@@ -38,7 +38,7 @@ RSpec.describe 'The User Movies Index page' do
     end
 
     it 'will not run if search field is blank', :vcr do
-      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com')
+      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
       visit "/users/#{oakley.id}/discover"
 

@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe 'The UserMovie Show Page' do
   describe 'has buttons', :vcr do
     it 'has a button to create a viewing party' do
-      user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+      user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
       visit "/users/#{user.id}/movies/#{movie.id}"
 
@@ -15,7 +15,7 @@ RSpec.describe 'The UserMovie Show Page' do
     end
 
     it 'has a button to return to the discover page' do
-      user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+      user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
       visit "/users/#{user.id}/movies/#{movie.id}"
 
@@ -27,7 +27,7 @@ RSpec.describe 'The UserMovie Show Page' do
 
   describe 'contains movie information', :vcr do
     before(:each) do
-      @user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+      @user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       @movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
       visit "/users/#{@user.id}/movies/#{@movie.id}"
     end

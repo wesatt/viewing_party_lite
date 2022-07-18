@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe "The User's Discover Movies Page", type: :feature do
   it 'has VPL title and discover movies at the top' do
-    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
 
     visit "/users/#{user.id}"
     click_button 'Discover Movies'
@@ -15,7 +15,7 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
   end
 
   it 'has a button that returns top rated movies', :vcr do
-    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
 
     visit "/users/#{user.id}/discover"
 
@@ -26,7 +26,7 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
   end
 
   it 'has a search field based on keyword', :vcr do
-    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com')
+    user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
 
     visit "/users/#{user.id}/discover"
 

@@ -13,6 +13,8 @@ RSpec.describe 'Registration Page', type: :feature do
 
       fill_in(:name, with: "Frankenstein's Monster")
       fill_in(:email, with: 'not-frankenstein@gmail.com')
+      fill_in(:password, with: 'test123')
+      fill_in(:password_confirmation, with: 'test123')
       click_button('Create New User')
 
       new_user = User.where(name: "Frankenstein's Monster").first

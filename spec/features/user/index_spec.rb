@@ -19,9 +19,9 @@ RSpec.describe 'User Index Page', type: :feature do
     end
 
     it 'has a list of existing users as links to the user dashboard' do
-      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com')
-      kona = User.create!(name: 'Kona', email: 'goodd_dog@gmail.com')
-      hazel = User.create!(name: 'Hazel', email: 'a_dog@gmail.com')
+      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
+      kona = User.create!(name: 'Kona', email: 'goodd_dog@gmail.com', password: 'test123')
+      hazel = User.create!(name: 'Hazel', email: 'a_dog@gmail.com', password: 'test123')
 
       visit root_path
 

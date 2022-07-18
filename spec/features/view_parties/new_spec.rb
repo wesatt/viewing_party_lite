@@ -5,9 +5,9 @@ require 'rails_helper'
 RSpec.describe 'User Movies View Parties New page' do
   describe 'creation form', :vcr do
     before :each do
-      @user = User.create!(name: 'Peter Cushing', email: 'helsing@hammer.com')
-      @user2 = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com')
-      @user3 = User.create!(name: 'Bela Lugosi', email: 'dracula@universal.com')
+      @user = User.create!(name: 'Peter Cushing', email: 'helsing@hammer.com', password: 'test123')
+      @user2 = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      @user3 = User.create!(name: 'Bela Lugosi', email: 'dracula@universal.com', password: 'test123')
       @movie = Movie.new(id: 11_868, title: 'Dracula', vote_average: 7.3, runtime: 82) # aka 'Horror of Dracula' in the US
       visit "/users/#{@user.id}/movies/#{@movie.id}/view_parties/new"
     end
