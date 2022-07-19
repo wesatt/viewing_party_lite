@@ -186,7 +186,14 @@ RSpec.describe 'User Index Page', type: :feature do
     # And then try to visit '/dashboard'
     # I remain on the landing page
     # And I see a message telling me that I must be logged in or registered to access my dashboard
-    it '' do
+    it 'returns an error if you try to visit the dashboard without being logged in' do
+      visit '/'
+      expect(page).to_not have_content('You must be logged in or registered to access your dashboard')
+
+      visit '/dashboard'
+
+      expect(current_path).to eq('/')
+      expect(page).to have_content('You must be logged in or registered to access your dashboard')
     end
   end
 end
