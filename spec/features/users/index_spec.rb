@@ -18,21 +18,21 @@ RSpec.describe 'User Index Page', type: :feature do
       expect(current_path).to eq('/register')
     end
 
-    it 'has a list of existing users as links to the user dashboard' do
-      oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
-      kona = User.create!(name: 'Kona', email: 'goodd_dog@gmail.com', password: 'test123')
-      hazel = User.create!(name: 'Hazel', email: 'a_dog@gmail.com', password: 'test123')
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(hazel)
+    # it 'has a list of existing users as links to the user dashboard' do
+    #   oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
+    #   kona = User.create!(name: 'Kona', email: 'goodd_dog@gmail.com', password: 'test123')
+    #   hazel = User.create!(name: 'Hazel', email: 'a_dog@gmail.com', password: 'test123')
+    #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(hazel)
 
-      visit root_path
+    #   visit root_path
 
-      expect(page).to have_link("#{oakley.email}'s Dashboard")
-      expect(page).to have_link("#{kona.email}'s Dashboard")
+    #   expect(page).to have_link("#{oakley.email}'s Dashboard")
+    #   expect(page).to have_link("#{kona.email}'s Dashboard")
 
-      click_link("#{hazel.email}'s Dashboard")
+    #   click_link("#{hazel.email}'s Dashboard")
 
-      expect(current_path).to eq('/dashboard')
-    end
+    #   expect(current_path).to eq('/dashboard')
+    # end
 
     it 'has a link to go back to the landing/user index page' do
       visit root_path
@@ -98,6 +98,95 @@ RSpec.describe 'User Index Page', type: :feature do
 
       expect(current_path).to eq('/login')
       expect(page).to have_content('Invalid information. Please double check login info and try again.')
+    end
+  end
+
+  describe 'part 3 - log out on index page' do
+    # As a logged in user
+    # When I visit the landing page
+    # I no longer see a link to Log In or Create an Account
+    # But I see a link to Log Out.
+    # When I click the link to Log Out
+    # I'm taken to the landing page
+    # And I can see that the Log Out link has changed back to a Log In link
+    it 'can log out a user that is logged in' do
+      User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      visit '/'
+      expect(page).to_not have_link('Log Out')
+      expect(page).to have_link('Log In')
+      expect(page).to have_button('Create a New User')
+
+      click_link('Log In')
+
+      expect(current_path).to eq('/login')
+
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      click_button('Submit')
+
+      expect(current_path).to eq('/dashboard')
+
+      visit '/'
+
+      expect(page).to have_link('Log Out')
+      expect(page).to_not have_link('Log In')
+      expect(page).to_not have_button('Create a New User')
+
+      click_link('Log Out')
+
+      expect(current_path).to eq('/')
+      expect(page).to_not have_link('Log Out')
+      expect(page).to have_link('Log In')
+      expect(page).to have_button('Create a New User')
+    end
+  end
+
+  describe 'Authorization User Stories' do
+    # User Story 1
+    # As a visitor
+    # When I visit the landing page
+    # I do not see the section of the page that lists existing users
+    # User Story 2
+    # As a registered user
+    # When I visit the landing page
+    # The list of existing users is no longer a link to their show pages
+    # But just a list of email addresses
+    it '1. do not see emails if not logged in, 2. but have emails once logged in' do
+      User.create!(name: 'Peter Cushing', email: 'helsing@hammer.com', password: 'test123')
+      User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      User.create!(name: 'Bela Lugosi', email: 'dracula@universal.com', password: 'test123')
+      visit '/'
+      expect(page).to_not have_content('helsing@hammer.com')
+      expect(page).to_not have_content('dracula@hammer.com')
+      expect(page).to_not have_content('dracula@universal.com')
+
+      click_link('Log In')
+
+      expect(current_path).to eq('/login')
+
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      click_button('Submit')
+
+      expect(current_path).to eq('/dashboard')
+
+      visit '/'
+
+      expect(page).to have_content('helsing@hammer.com')
+      expect(page).to have_content('dracula@hammer.com')
+      expect(page).to have_content('dracula@universal.com')
+      expect(page).to_not have_link('helsing@hammer.com')
+      expect(page).to_not have_link('dracula@hammer.com')
+      expect(page).to_not have_link('dracula@universal.com')
+    end
+
+    # User Story 3
+    # As a visitor
+    # When I visit the landing page
+    # And then try to visit '/dashboard'
+    # I remain on the landing page
+    # And I see a message telling me that I must be logged in or registered to access my dashboard
+    it '' do
     end
   end
 end

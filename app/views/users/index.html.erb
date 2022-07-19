@@ -2,16 +2,24 @@
   <h1> Viewing Party Lite </h1>
 
   <div id="button">
-    <%= button_to "Create a New User", "/register", method: :get %>
-    <br>
-    <%= link_to "Log In", "/login", method: :get %>
-    <br>
+    <% if current_user %>
+      <%= link_to "Log Out", "/logout", method: :delete %>
+    <% else %>
+      <%= button_to "Create a New User", "/register", method: :get %>
+      <br>
+      <%= link_to "Log In", "/login", method: :get %>
+      <br>
+    <% end %>
   </div>
 
   <div>
-    Existing Users: <br>
-      <% @users.each do |user| %>
-        <%= link_to "#{user.email}'s Dashboard", "/dashboard" %> </br>
-      <% end %>
+    <% if current_user %>
+      Existing Users: <br>
+        <% @users.each do |user| %>
+          <% # link_to "#{user.email}'s Dashboard", "/dashboard" %>
+          <%= user.email %>
+          </br>
+        <% end %>
+    <% end %>
   </div>
 </center>

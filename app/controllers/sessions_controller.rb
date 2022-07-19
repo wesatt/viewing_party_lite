@@ -12,4 +12,9 @@ class SessionsController < ApplicationController
       redirect_to '/login', notice: 'Invalid information. Please double check login info and try again.'
     end
   end
+
+  def destroy
+    session.destroy
+    redirect_to '/'
+  end
 end
