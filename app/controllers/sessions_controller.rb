@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to "/users/#{user.id}"
+      redirect_to "/dashboard"
     else
       redirect_to '/login', notice: 'Invalid information. Please double check login info and try again.'
     end

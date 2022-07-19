@@ -10,7 +10,7 @@
     <% end %>
 
     <div class="form">
-      <%= form_with url: '/users', method: :post, local: true do |f| %>
+      <%= form_with url: '/dashboard', method: :post, local: true do |f| %>
         <p><%= f.label "Name:  " %>
         <%= f.text_field :name %><br></p>
         <p><%= f.label "Email:  " %>

@@ -22,6 +22,7 @@ RSpec.describe 'User Index Page', type: :feature do
       oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
       kona = User.create!(name: 'Kona', email: 'goodd_dog@gmail.com', password: 'test123')
       hazel = User.create!(name: 'Hazel', email: 'a_dog@gmail.com', password: 'test123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(hazel)
 
       visit root_path
 
@@ -30,7 +31,7 @@ RSpec.describe 'User Index Page', type: :feature do
 
       click_link("#{hazel.email}'s Dashboard")
 
-      expect(current_path).to eq("/users/#{hazel.id}")
+      expect(current_path).to eq("/dashboard")
     end
 
     it 'has a link to go back to the landing/user index page' do
@@ -69,7 +70,7 @@ RSpec.describe 'User Index Page', type: :feature do
       fill_in(:password, with: 'test123')
       click_button('Submit')
 
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end
 

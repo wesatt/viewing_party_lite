@@ -7,7 +7,7 @@ RSpec.describe 'The User Movies Index page' do
     it 'has a list of top rated movies', :vcr do
       oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
-      visit "/users/#{oakley.id}/discover"
+      visit "/dashboard/discover"
 
       click_button 'Find Top Rated Movies'
 
@@ -23,7 +23,7 @@ RSpec.describe 'The User Movies Index page' do
     it 'can search for movies based on search criteria', :vcr do
       oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
-      visit "/users/#{oakley.id}/discover"
+      visit "/dashboard/discover"
 
       fill_in :q, with: 'top gun'
       click_button 'Find Movies'
@@ -40,7 +40,7 @@ RSpec.describe 'The User Movies Index page' do
     it 'will not run if search field is blank', :vcr do
       oakley = User.create!(name: 'Oakley', email: 'good_dog@gmail.com', password: 'test123')
 
-      visit "/users/#{oakley.id}/discover"
+      visit "/dashboard/discover"
 
       # fill_in :q, with: ""
       click_button 'Find Movies'

@@ -19,7 +19,7 @@ RSpec.describe 'Registration Page', type: :feature do
 
       new_user = User.where(name: "Frankenstein's Monster").first
 
-      expect(current_path).to eq("/users/#{new_user.id}")
+      expect(current_path).to eq("/dashboard")
       # expect(page).to have_content("Frankenstein's Monster's Dashboard")
     end
 

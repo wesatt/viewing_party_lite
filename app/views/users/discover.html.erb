@@ -4,14 +4,14 @@
   <h2> Discover Movies </h2>
 
   <div class="button">
-    <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", params: { q: "top 20rated" }, method: :get %>
+    <%= button_to "Find Top Rated Movies", "/movies", params: { q: "top 20rated" }, method: :get %>
   </div>
 <p> OR </p>
 <% flash.each do |type, msg| %>
   <div> <%= msg %> </div>
 <% end %>
   <div class="form">
-    <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+    <%= form_with url: "/movies", method: :get, local: true do |form| %>
       <%= form.text_field :q, placeholder: "Search by movie title", :required => true %>
       <%= form.submit "Find Movies" %>
     <% end %>

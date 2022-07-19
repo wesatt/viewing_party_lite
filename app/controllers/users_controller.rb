@@ -8,18 +8,18 @@ class UsersController < ApplicationController
   def new; end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def create
     new_user = User.new(user_params)
     if new_user.save
       session[:user_id] = new_user.id
-      redirect_to "/users/#{new_user.id}"
+      redirect_to "/dashboard"
     else
       redirect_to '/register', notice: new_user.errors.full_messages.first
     end
