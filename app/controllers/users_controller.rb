@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   def create
     new_user = User.new(user_params)
     if new_user.save
+      session[:user_id] = new_user.id
       redirect_to "/users/#{new_user.id}"
     else
       redirect_to '/register', notice: new_user.errors.full_messages.first
@@ -31,6 +32,7 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
       redirect_to '/login', notice: 'Invalid information. Please double check login info and try again.'
