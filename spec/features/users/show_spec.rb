@@ -8,7 +8,7 @@ RSpec.describe 'The User Show Page', type: :feature do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit "/dashboard"
+      visit '/dashboard'
 
       expect(page).to have_content('Viewing Party Lite')
       expect(page).to have_content("#{user.name}'s Dashboard")
@@ -18,11 +18,11 @@ RSpec.describe 'The User Show Page', type: :feature do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit "/dashboard"
+      visit '/dashboard'
 
       click_button 'Discover Movies'
 
-      expect(current_path).to eq("/discover")
+      expect(current_path).to eq('/discover')
     end
 
     it 'has a section that lists viewing parties' do
@@ -30,7 +30,7 @@ RSpec.describe 'The User Show Page', type: :feature do
       # will need to add more to this test, select a movie, create a view party etc.
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit "/dashboard"
+      visit '/dashboard'
 
       expect(page).to have_content('Viewing Parties')
     end

@@ -19,7 +19,7 @@ RSpec.describe 'Registration Page', type: :feature do
 
       new_user = User.where(name: "Frankenstein's Monster").first
 
-      expect(current_path).to eq("/dashboard")
+      expect(current_path).to eq('/dashboard')
       # expect(page).to have_content("Frankenstein's Monster's Dashboard")
     end
 
@@ -50,7 +50,8 @@ RSpec.describe 'Registration Page', type: :feature do
     end
 
     it 'will return an error if email is not unique' do
-      User.create!(name: 'Adam Frankenstein', email: 'not-frankenstein@gmail.com', password: 'Test123', password_confirmation: 'Test123')
+      User.create!(name: 'Adam Frankenstein', email: 'not-frankenstein@gmail.com', password: 'Test123',
+                   password_confirmation: 'Test123')
       visit '/register'
 
       expect(page).to_not have_content("Name can't be blank")
@@ -62,7 +63,7 @@ RSpec.describe 'Registration Page', type: :feature do
       click_button('Create New User')
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content("Email has already been taken")
+      expect(page).to have_content('Email has already been taken')
     end
   end
 

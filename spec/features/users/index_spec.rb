@@ -31,7 +31,7 @@ RSpec.describe 'User Index Page', type: :feature do
 
       click_link("#{hazel.email}'s Dashboard")
 
-      expect(current_path).to eq("/dashboard")
+      expect(current_path).to eq('/dashboard')
     end
 
     it 'has a link to go back to the landing/user index page' do
@@ -70,7 +70,7 @@ RSpec.describe 'User Index Page', type: :feature do
       fill_in(:password, with: 'test123')
       click_button('Submit')
 
-      expect(current_path).to eq("/dashboard")
+      expect(current_path).to eq('/dashboard')
     end
   end
 
@@ -100,5 +100,4 @@ RSpec.describe 'User Index Page', type: :feature do
       expect(page).to have_content('Invalid information. Please double check login info and try again.')
     end
   end
-
 end

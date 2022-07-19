@@ -21,7 +21,7 @@ RSpec.describe 'The UserMovie Show Page' do
 
       click_button('Discover Page')
 
-      expect(current_path).to eq("/discover")
+      expect(current_path).to eq('/discover')
     end
   end
 

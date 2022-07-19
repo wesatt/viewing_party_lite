@@ -33,7 +33,7 @@ class ViewPartiesController < ApplicationController
             )
           end
         end
-        redirect_to "/dashboard"
+        redirect_to '/dashboard'
       else
         redirect_to "/movies/#{params[:movie_id]}/view_parties/new",
                     notice: 'Invalid Data. Please keep data in the displayed format.'

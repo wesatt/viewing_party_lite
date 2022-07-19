@@ -42,7 +42,7 @@ RSpec.describe 'User Movies View Parties New page' do
       # the dashboard where the new event is shown.
       # The event should also be listed on any other user's dashbaords
       # that were also invited to the party.
-      visit "/dashboard"
+      visit '/dashboard'
       expect(page).to_not have_content(@movie.title)
       visit "/movies/#{@movie.id}/view_parties/new"
 
@@ -56,7 +56,7 @@ RSpec.describe 'User Movies View Parties New page' do
       end
       click_button('Create Party')
 
-      expect(current_path).to eq("/dashboard")
+      expect(current_path).to eq('/dashboard')
       expect(page).to have_content(@movie.title)
     end
 

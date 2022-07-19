@@ -7,10 +7,10 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
     user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit "/dashboard"
+    visit '/dashboard'
     click_button 'Discover Movies'
 
-    expect(current_path).to eq("/discover")
+    expect(current_path).to eq('/discover')
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_content('Discover Movies')
   end
@@ -19,11 +19,11 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
     user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit "/discover"
+    visit '/discover'
 
     click_button 'Find Top Rated Movies'
 
-    expect(current_path).to eq("/movies")
+    expect(current_path).to eq('/movies')
     # expect(page).to have_content("Vote Average")
   end
 
@@ -31,7 +31,7 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
     user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-    visit "/discover"
+    visit '/discover'
 
     fill_in :q, with: 'Fight'
     click_button 'Find Movies'
