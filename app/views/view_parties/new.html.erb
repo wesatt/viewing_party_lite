@@ -2,7 +2,7 @@
   <h1>Viewing Party Light</h1>
   <h2>Create a Movie Party for <%= @movie.title %></h2>
   <div class="button">
-    <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
+    <%= button_to "Discover Page", "/discover", method: :get %>
   </div> <br>
   <div id="box2">
     <h2>Viewing Party Details</h2>
@@ -10,7 +10,7 @@
       <div> <%= msg %> </div>
     <% end %>
     <div class="form">
-      <%= form_with url: "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties", method: :post, local: true do |f| %>
+      <%= form_with url: "/movies/#{params[:movie_id]}/view_parties", method: :post, local: true do |f| %>
         <p>
           <strong>Movie Title</strong> <%= @movie.title %>
         </p>
@@ -29,7 +29,7 @@
         <p>
           <% @users.each do |user| %>
             <div id="user-<%= user.id %>">
-              <% if user.id != params[:user_id].to_i%>
+              <% if user.id != session[:user_id].to_i%>
                 <%= f.check_box :invited, {multiple: true }, user.id, nil %>
                 <%= label_tag("#{user.id}", "#{user.name} (#{user.email})") %>
               <% end %>

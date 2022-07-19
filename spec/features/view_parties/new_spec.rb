@@ -9,7 +9,8 @@ RSpec.describe 'User Movies View Parties New page' do
       @user2 = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
       @user3 = User.create!(name: 'Bela Lugosi', email: 'dracula@universal.com', password: 'test123')
       @movie = Movie.new(id: 11_868, title: 'Dracula', vote_average: 7.3, runtime: 82) # aka 'Horror of Dracula' in the US
-      visit "/users/#{@user.id}/movies/#{@movie.id}/view_parties/new"
+      visit "/movies/#{@movie.id}/view_parties/new"
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     end
 
     it 'exists and has the name of the movie' do
@@ -41,9 +42,9 @@ RSpec.describe 'User Movies View Parties New page' do
       # the dashboard where the new event is shown.
       # The event should also be listed on any other user's dashbaords
       # that were also invited to the party.
-      visit "users/#{@user.id}"
+      visit "/dashboard"
       expect(page).to_not have_content(@movie.title)
-      visit "/users/#{@user.id}/movies/#{@movie.id}/view_parties/new"
+      visit "/movies/#{@movie.id}/view_parties/new"
 
       fill_in(:date, with: '2022-10-31')
       fill_in(:time, with: '22:00')
@@ -55,7 +56,7 @@ RSpec.describe 'User Movies View Parties New page' do
       end
       click_button('Create Party')
 
-      expect(current_path).to eq("/users/#{@user.id}")
+      expect(current_path).to eq("/dashboard")
       expect(page).to have_content(@movie.title)
     end
 
@@ -70,7 +71,7 @@ RSpec.describe 'User Movies View Parties New page' do
       end
       click_button('Create Party')
 
-      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/view_parties/new")
+      expect(current_path).to eq("/movies/#{@movie.id}/view_parties/new")
       expect(page).to have_content('Invalid Data. Please keep data in the displayed format.')
     end
 
@@ -80,7 +81,7 @@ RSpec.describe 'User Movies View Parties New page' do
       fill_in(:time, with: '22:00')
       click_button('Create Party')
 
-      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/view_parties/new")
+      expect(current_path).to eq("/movies/#{@movie.id}/view_parties/new")
       expect(page).to have_content('Duration of party cannot be less than movie runtime')
     end
   end

@@ -7,6 +7,7 @@ class ViewPartiesController < ApplicationController
   end
 
   def create
+    host = current_user
     if params[:movie_runtime].to_i <= params[:duration].to_i
       party = ViewParty.new(
         movie_api_id: params[:movie_id],
@@ -15,11 +16,11 @@ class ViewPartiesController < ApplicationController
         time: params[:time],
         movie_image_path: params[:movie_image_path],
         movie_title: params[:movie_title],
-        host_id: params[:user_id]
+        host_id: session[:user_id]
       )
       if party.save
         UserViewParty.create!(
-          user_id: params[:user_id],
+          user_id: host.id,
           view_party_id: party.id,
           host: true
         )
@@ -32,13 +33,13 @@ class ViewPartiesController < ApplicationController
             )
           end
         end
-        redirect_to "/users/#{params[:user_id]}"
+        redirect_to "/dashboard"
       else
-        redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new",
+        redirect_to "/movies/#{params[:movie_id]}/view_parties/new",
                     notice: 'Invalid Data. Please keep data in the displayed format.'
       end
     else
-      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new",
+      redirect_to "/movies/#{params[:movie_id]}/view_parties/new",
                   notice: 'Duration of party cannot be less than movie runtime.'
     end
   end
