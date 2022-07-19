@@ -9,8 +9,8 @@ RSpec.describe 'User Movies View Parties New page' do
       @user2 = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
       @user3 = User.create!(name: 'Bela Lugosi', email: 'dracula@universal.com', password: 'test123')
       @movie = Movie.new(id: 11_868, title: 'Dracula', vote_average: 7.3, runtime: 82) # aka 'Horror of Dracula' in the US
-      visit "/movies/#{@movie.id}/view_parties/new"
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+      visit "/movies/#{@movie.id}/view_parties/new"
     end
 
     it 'exists and has the name of the movie' do

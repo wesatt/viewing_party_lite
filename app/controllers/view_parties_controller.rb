@@ -2,6 +2,10 @@
 
 class ViewPartiesController < ApplicationController
   def new
+    user = current_user
+    if !user
+      redirect_to "/movies/#{params[:movie_id]}", notice: 'You must be logged in or registered to create a movie party'
+    end
     @movie = MovieFacade.find_movie(params[:movie_id])
     @users = User.all
   end

@@ -3,6 +3,10 @@
     <h1> Viewing Party Lite </h1>
     <h2> <%= @movie.title %> </h2>
 
+    <% flash.each do |type, msg| %>
+      <div> <%= msg %> </div>
+    <% end %>
+
     <div class="button">
       <%= button_to "Discover Page", "/discover", method: :get %>
     </div> <br>

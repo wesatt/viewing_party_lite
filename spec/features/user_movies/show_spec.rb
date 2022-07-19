@@ -7,6 +7,7 @@ RSpec.describe 'The UserMovie Show Page' do
     it 'has a button to create a viewing party' do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit "/movies/#{movie.id}"
 
       click_button("Create Viewing Party for #{movie.title}")
@@ -17,6 +18,7 @@ RSpec.describe 'The UserMovie Show Page' do
     it 'has a button to return to the discover page' do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit "/movies/#{movie.id}"
 
       click_button('Discover Page')
@@ -29,6 +31,7 @@ RSpec.describe 'The UserMovie Show Page' do
     before(:each) do
       @user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       @movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
       visit "/movies/#{@movie.id}"
     end
 
@@ -64,6 +67,27 @@ RSpec.describe 'The UserMovie Show Page' do
     it 'has each reviews author and information' do
       expect(page).to have_content('Author: Goddard')
       expect(page).to have_content('Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.')
+    end
+  end
+
+  describe 'Authorization User Story 4', :vcr do
+    before(:each) do
+      @user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
+      @movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
+      visit "/movies/#{@movie.id}"
+    end
+    # As a visitor
+    # If I go to a movies show page
+    # And click the button to create a viewing party
+    # I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party.
+    it 'redirects to the movie show page if they try to navigate to view party creation without being logged in' do
+      expect(current_path).to eq("/movies/#{@movie.id}")
+      expect(page).to_not have_content('You must be logged in or registered to create a movie party')
+
+      click_button("Create Viewing Party for #{@movie.title}")
+
+      expect(current_path).to eq("/movies/#{@movie.id}")
+      expect(page).to have_content('You must be logged in or registered to create a movie party')
     end
   end
 end
