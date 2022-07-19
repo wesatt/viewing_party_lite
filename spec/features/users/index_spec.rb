@@ -73,19 +73,30 @@ RSpec.describe 'User Index Page', type: :feature do
     end
   end
 
-  describe '' do
-    it '' do
-      user = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
-      visit '/'
-      click_link('Log In')
-
-      expect(current_path).to eq('/login')
+  describe 'User Story #4 - Logging In Sad Path' do
+    # As a registered user
+    # When I visit the landing page `/`
+    # And click on the link to go to my dashboard
+    # And fail to fill in my correct credentials
+    # I'm taken back to the Log In page
+    # And I can see a flash message telling me that I entered incorrect credentials.
+    it 'will return an error message if incorrect credentials are entered' do
+      User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      visit '/login'
 
       fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'Test123')
+      click_button('Submit')
+
+      expect(current_path).to eq('/login')
+      expect(page).to have_content('Invalid information. Please double check login info and try again.')
+
+      fill_in(:email, with: 'dracula@hammer.edu')
       fill_in(:password, with: 'test123')
       click_button('Submit')
 
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq('/login')
+      expect(page).to have_content('Invalid information. Please double check login info and try again.')
     end
   end
 

@@ -1,13 +1,18 @@
 <center>
   <h1> Viewing Party Lite </h1>
+  <h2>Log In</h2>
 
-    <div class="form">
-      <%= form_with url: '/login', method: :post, local: true do |f| %>
-        <p><%= f.label "Email:  " %>
-        <%= f.text_field :email %><br></p>
-        <p><%= f.label "Password:  " %>
-        <%= f.text_field :password %><br></p>
-        <p><%= f.submit "Submit" %></p>
-      <% end %>
-    </div/>
+  <% flash.each do |type, msg| %>
+    <div> <%= msg %> </div>
+  <% end %>
+
+  <div class="form">
+    <%= form_with url: '/login', method: :post, local: true do |f| %>
+      <p><%= f.label "Email:  " %>
+      <%= f.text_field :email %><br></p>
+      <p><%= f.label "Password:  " %>
+      <%= f.text_field :password %><br></p>
+      <p><%= f.submit "Submit" %></p>
+    <% end %>
+  </div/>
 </center>
