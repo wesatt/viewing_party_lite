@@ -121,15 +121,15 @@ RSpec.describe 'Registration Page', type: :feature do
 
       fill_in(:name, with: 'Christopher Lee')
       fill_in(:email, with: 'dracula@hammer.com')
-      fill_in(:password, with: '')
-      fill_in(:password_confirmation, with: 'test321')
+      fill_in(:password, with: 'test321')
+      fill_in(:password_confirmation, with: '')
       click_button('Create New User')
 
       shouldnt_exist = User.where(name: 'Christopher Lee')
 
       expect(shouldnt_exist).to eq([])
       expect(current_path).to eq('/register')
-      expect(page).to have_content("Password digest can't be blank")
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end

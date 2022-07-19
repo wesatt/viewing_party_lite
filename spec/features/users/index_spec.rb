@@ -49,4 +49,44 @@ RSpec.describe 'User Index Page', type: :feature do
       expect(current_path).to eq(root_path)
     end
   end
+
+  describe 'User Story #3 - Logging In Happy Path' do
+    # As a registered user
+    # When I visit the landing page `/`
+    # I see a link for "Log In"
+    # When I click on "Log In"
+    # I'm taken to a Log In page ('/login') where I can input my unique email and password.
+    # When I enter my unique email and correct password
+    # I'm taken to my dashboard page
+    it 'has a link to the login page that takes you to the user show page when correct info is entered' do
+      user = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      visit '/'
+      click_link('Log In')
+
+      expect(current_path).to eq('/login')
+
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      click_button('Submit')
+
+      expect(current_path).to eq("/users/#{user.id}")
+    end
+  end
+
+  describe '' do
+    it '' do
+      user = User.create!(name: 'Christopher Lee', email: 'dracula@hammer.com', password: 'test123')
+      visit '/'
+      click_link('Log In')
+
+      expect(current_path).to eq('/login')
+
+      fill_in(:email, with: 'dracula@hammer.com')
+      fill_in(:password, with: 'test123')
+      click_button('Submit')
+
+      expect(current_path).to eq("/users/#{user.id}")
+    end
+  end
+
 end
