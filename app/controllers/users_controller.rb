@@ -9,9 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    if !@user
-      redirect_to '/', notice: 'You must be logged in or registered to access your dashboard'
-    end
+    redirect_to '/', notice: 'You must be logged in or registered to access your dashboard' unless @user
   end
 
   def discover
