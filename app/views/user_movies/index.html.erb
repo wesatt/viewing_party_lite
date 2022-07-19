@@ -3,19 +3,19 @@
 
   <% if @movies.present? %>
     <h2> Top Rated Movies </h2> <br>
-    <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
+    <%= button_to "Discover Page", "/discover", method: :get %>
     <br>
     <div id="half">
       <% @movies.each do |movie| %>
-        <div style="text-align:left;"><%= link_to movie.title, "/users/#{params[:user_id]}/movies/#{movie.id}", method: :get %></div> <div style="text-align:right;">Vote Average: <%= movie.vote_average %></div>
+        <div style="text-align:left;"><%= link_to movie.title, "/movies/#{movie.id}", method: :get %></div> <div style="text-align:right;">Vote Average: <%= movie.vote_average %></div>
       <% end %>
     </div>
   <% else %>
     <h2> Movie results for: <%= params[:q] %> </h2> <br>
-    <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
+    <%= button_to "Discover Page", "/discover", method: :get %>
     <% @search_movies.each do |movie| %>
       <div>
-        <p><%= link_to movie.title, "/users/#{params[:user_id]}/movies/#{movie.id}", method: :get %>, Vote Average: <%= movie.vote_average %></p>
+        <p><%= link_to movie.title, "/movies/#{movie.id}", method: :get %>, Vote Average: <%= movie.vote_average %></p>
       </div>
     <% end %>
   <% end %>

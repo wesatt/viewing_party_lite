@@ -6,7 +6,7 @@ class UserMoviesController < ApplicationController
     when 'top 20rated'
       @movies = MovieFacade.top_40
     when ''
-      redirect_to "/users/#{params[:user_id]}/discover", notice: 'Search cannot be blank.'
+      redirect_to "/discover", notice: 'Search cannot be blank.'
     else
       @search_movies = MovieFacade.search_by_keyword(params[:q])
     end

@@ -7,21 +7,21 @@ RSpec.describe 'The UserMovie Show Page' do
     it 'has a button to create a viewing party' do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
-      visit "/users/#{user.id}/movies/#{movie.id}"
+      visit "/movies/#{movie.id}"
 
       click_button("Create Viewing Party for #{movie.title}")
       # expect(page).to have_button("Create Viewing Party for #{movie.title}")
-      expect(current_path).to eq("/users/#{user.id}/movies/#{movie.id}/view_parties/new")
+      expect(current_path).to eq("/movies/#{movie.id}/view_parties/new")
     end
 
     it 'has a button to return to the discover page' do
       user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
-      visit "/users/#{user.id}/movies/#{movie.id}"
+      visit "/movies/#{movie.id}"
 
       click_button('Discover Page')
 
-      expect(current_path).to eq("/users/#{user.id}/discover")
+      expect(current_path).to eq("/discover")
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe 'The UserMovie Show Page' do
     before(:each) do
       @user = User.create!(name: 'Rand', email: 'randalthor@gmail.com', password: 'test123')
       @movie = Movie.new(id: 550, title: 'Fight Club', vote_average: 8.4)
-      visit "/users/#{@user.id}/movies/#{@movie.id}"
+      visit "/movies/#{@movie.id}"
     end
 
     it 'has the movie title' do

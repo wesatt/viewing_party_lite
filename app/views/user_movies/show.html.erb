@@ -4,10 +4,10 @@
     <h2> <%= @movie.title %> </h2>
 
     <div class="button">
-      <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
+      <%= button_to "Discover Page", "/discover", method: :get %>
     </div> <br>
     <div class="button">
-      <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{@movie.id}/view_parties/new", method: :get %>
+      <%= button_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/view_parties/new", method: :get %>
     </div>
 
     <div class="stats-bar">
